@@ -56,8 +56,8 @@ Build a logistic regression model for anomaly detection.
 Deploy the model via a RESTful API using FastAPI.
 Display real-time predictions using a frontend interface.
 
-System Architecture
-![Architecture](https://github.com/sunday-mamuyowi-onojaife/assets/dc8a5fc6-cbcf-4962-b672-b6124b17fdfd)
+System Architecture 
+![Architecture](https://github.com/user-attachments/assets/876be19f-f7d5-4a4b-8eb4-1802b7344bb7)
 The architecture includes:
  1 Data Generation: Simulated sensor data generation in CSV format.
  2 Data Stream Simulation: Continuous data streaming to mimic real-time sensor readings.
@@ -99,9 +99,21 @@ It communicates with the FastAPI backend, sending POST requests to /predict and 
 The frontend setup is managed with Vite, styled using TailwindCSS. 
 
 Installation and Setup
+1 Clone the repository: 
+*git clone https://github.com/
+2 Install dependencies:
+pip install -r requirements.txt
+3 Generate dataset:
+gendata.py
+4 Train the model:
+genmodel.py
+5 Run the FastAPI server: 
+uvicorn fastapi:app --reload
+6 Launch the frontend (React setup): Follow Vite setup instructions for frontend deployment.
+
 Usage
 Once the API server is running, send sensor data to /predict to receive anomaly predictions. 
-Example usage:
+Example usage: 
 curl -X POST http://localhost:8000/predict -H "Content-Type: application/json" -d "{\"temperature\": 30, \"humidity\": 70, \"sound_volume\": 65}"
 
 Challenges and Considerations
@@ -109,6 +121,6 @@ Data Generation: Simulating realistic sensor data with sufficient variability.
 Model Performance: Managing imbalanced data and preventing overfitting to simulated patterns.
 API Integration: Ensuring low latency in real-time predictions.
 Scalability: Managing API concurrency with Uvicorn and FastAPI.
-Security: Future improvements include adding authentication and input validation.
+
 
 
