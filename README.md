@@ -76,6 +76,8 @@ Data Storage (Database/File Storage): Generated sensor data is stored locally in
 
 Anomaly Detection Model: A logistic regression model to classify normal and abnormal readings.
 
+Anomaly Detector RESTful API: The API, built using FastAPI, processes incoming sensor data and provides a real-time anomaly prediction.
+
 Decision Support System: A frontend interface for user input and real-time anomaly feedback.
 
 Data Generation
