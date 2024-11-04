@@ -115,21 +115,28 @@ It communicates with the FastAPI backend, sending POST requests to /predict and 
 The frontend setup is managed with Vite, styled using TailwindCSS. 
 
 Installation and Setup
+
 1 Clone the repository: 
 *git clone https://github.com/
+
 2 Install dependencies:
 pip install -r requirements.txt
+
 3 Generate dataset:
 gendata.py
+
 4 Train the model:
 genmodel.py
+
 5 Run the FastAPI server: 
 uvicorn fastapi:app --reload
+
 6 Launch the frontend (React setup): Follow Vite setup instructions for frontend deployment.
 
 Usage
 Once the API server is running, send sensor data to /predict to receive anomaly predictions. 
 Example usage: 
+
 curl -X POST http://localhost:8000/predict -H "Content-Type: application/json" -d "{\"temperature\": 30, \"humidity\": 70, \"sound_volume\": 65}"
 
 Challenges and Considerations
