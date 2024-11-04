@@ -130,29 +130,29 @@ genmodel.py
 
 5 Run the FastAPI server backend:
 
-Open new command prompt, and dont close.
+   Open new command prompt, and dont close.
 
-Directory Desktop 
+   Directory Desktop 
 
-cd IU-Model_to_Production 
+   cd IU-Model_to_Production 
 
-uvicorn backend:app  --reload
+   uvicorn backend:app  --reload
 
 6 Launch the frontend (React setup): 
-open another new command prompt, and dont close.
+   open another new command prompt, and dont close.
 
-cd Desktop
+   cd Desktop
 
-cd frontend_iu_model_to_production
+   cd frontend_iu_model_to_production
 
-code .  to open vscode 
+   code . , to open vscode 
 
-at vscode, go to terminal. 
+   at vscode, go to terminal. 
 
-type npm  run dev 
+   type npm  run dev 
 
-highlight the cursor on the localhost and click on the followlink that pop up:   http://localhost:5173/
-a new window will open with the user interface enter temperature 30, humidity 70, sound volume 65.
+   highlight the cursor on the localhost and click on the followlink that pop up:   http://localhost:5173/
+   a new window will open with the user interface enter temperature 30, humidity 70, sound volume 65.
 
 Usage
 Once the API server is running, send sensor data to /predict to receive anomaly predictions. 
