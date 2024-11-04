@@ -59,11 +59,19 @@ Display real-time predictions using a frontend interface.
 System Architecture 
 ![Architecture](https://github.com/user-attachments/assets/876be19f-f7d5-4a4b-8eb4-1802b7344bb7)
 The architecture includes:
- 1 Data Generation: Simulated sensor data generation in CSV format.
- 2 Data Stream Simulation: Continuous data streaming to mimic real-time sensor readings.
- 3 Data Ingestion API: A FastAPI service that receives and processes sensor data.
- 4 Anomaly Detection Model: A logistic regression model to classify normal and abnormal readings.
- 5 Decision Support System: A frontend interface for user input and real-time anomaly feedback.
+Generated Dataset: Simulated sensor data generation in CSV format.
+ 
+Data Stream Simulation: Continuous data streaming to mimic real-time sensor readings.
+ 
+Data Ingestion API: A FastAPI service that receives and processes sensor data.
+
+Stream Processor: A stream processor continuously feeds this data to the Anomaly Detector for real-time analysis
+
+Data Storage (Database/File Storage): Generated sensor data is stored locally in a CSV file format.
+
+Anomaly Detection Model: A logistic regression model to classify normal and abnormal readings.
+
+Decision Support System: A frontend interface for user input and real-time anomaly feedback.
 
 Data Generation
 The data is synthetically generated to mimic sensor readings in a factory setting. 
