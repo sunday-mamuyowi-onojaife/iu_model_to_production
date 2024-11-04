@@ -88,7 +88,7 @@ Normal Data: Generated around typical sensor values.
 Abnormal Data: Outliers with extreme values to simulate faults.
 The data is stored in sensor_data.csv, and a small Python script simulates streaming by printing data at intervals.
 Code snippet to generate data:
-python gendata.py
+ gendata.py
 
 Model Training and Deployment
 A logistic regression model is trained to distinguish between normal and anomalous data:
@@ -128,10 +128,21 @@ gendata.py
 4 Train the model:
 genmodel.py
 
-5 Run the FastAPI server: 
-uvicorn fastapi:app --reload
+5 Run the FastAPI server backend:
+Open new command prompt, and dont close.
+Directory Desktop 
+cd IU-Model_to_Production 
+uvicorn backend:app  --reload
 
-6 Launch the frontend (React setup): Follow Vite setup instructions for frontend deployment.
+6 Launch the frontend (React setup): 
+open another new command prompt, and dont close.
+cd Desktop 
+cd Desktop
+cd frontend_iu_model_to_production
+code .  to open vscode 
+at vscode, go to terminal. 
+type npm  run dev 
+highlight the cursor on the localhost and click on the followlink that pop up:   http://localhost:5173/
 
 Usage
 Once the API server is running, send sensor data to /predict to receive anomaly predictions. 
