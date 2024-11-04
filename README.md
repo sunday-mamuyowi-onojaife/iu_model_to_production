@@ -3,6 +3,9 @@ Project: From Model to Production (DLBDSMTP01).
 
 
 Task 1: Anomaly detection in an IoT setting (Spotlight: Stream processing).  
+This repository contains the implementation of an anomaly detection system designed for a factory setting. 
+The system processes real-time sensor data to identify anomalies in the production cycle for wind turbine components, 
+leveraging Python, machine learning, and FastAPI.
 
 Problem Statement.
 A cutting-edge modern factory is producing machine components for wind turbines. The factory
@@ -43,55 +46,69 @@ libraries for this, such as Flask or mlflow. A good starting point for this step
 documentation of the respective Python libraries. This will be the most work-intensive step of
 your project.
 
-CONCEPTUAL ARCHITECTURE 
-![Architecture](https://github.com/user-attachments/assets/dc8a5fc6-cbcf-4962-b672-b6124b17fdfd)
+Project Overview
+This project simulates an IoT environment where real-time sensor data (temperature, humidity, and sound volume)
+is monitored for anomalies. An anomaly detection model predicts faulty components, enabling proactive maintenance and minimizing production downtime.
 
+Objectives
+Simulate and ingest real-time sensor data.
+Build a logistic regression model for anomaly detection.
+Deploy the model via a RESTful API using FastAPI.
+Display real-time predictions using a frontend interface.
 
+System Architecture
+![Architecture](https://github.com/sunday-mamuyowi-onojaife/assets/dc8a5fc6-cbcf-4962-b672-b6124b17fdfd)
+The architecture includes:
+ 1 Data Generation: Simulated sensor data generation in CSV format.
+ 2 Data Stream Simulation: Continuous data streaming to mimic real-time sensor readings.
+ 3 Data Ingestion API: A FastAPI service that receives and processes sensor data.
+ 4 Anomaly Detection Model: A logistic regression model to classify normal and abnormal readings.
+ 5 Decision Support System: A frontend interface for user input and real-time anomaly feedback.
 
+Data Generation
+The data is synthetically generated to mimic sensor readings in a factory setting. 
+The dataset includes 5000 normal and 1600 abnormal instances:
+Normal Data: Generated around typical sensor values.
+Abnormal Data: Outliers with extreme values to simulate faults.
+The data is stored in sensor_data.csv, and a small Python script simulates streaming by printing data at intervals.
+Code snippet to generate data:
+python gendata.py
 
+Model Training and Deployment
+A logistic regression model is trained to distinguish between normal and anomalous data:
+Preprocessing: Standard scaling is applied to normalize features.
+Training: The model is trained with the generated dataset.
+Model Serialization: The trained model and scaler are saved using joblib.
+To deploy, FastAPI loads the serialized model, and the /predict endpoint is exposed for anomaly detection requests.
+Example code for model training: 
+   genmodel.py 
+   
+API Endpoints
+A FastAPI server hosts the model as a RESTful service.
+/predict (POST)
+Input: JSON with temperature, humidity, and sound_volume.
+Output: JSON with prediction (0: normal, 1: anomalous).
+Example request:
+curl -X POST http://localhost:8000/predict -H "Content-Type: application/json" -d "{\"temperature\": 30, \"humidity\": 70, \"sound_volume\": 65}"
+Code for API deployment: 
+uvicorn fastapi:app --reload
 
+Frontend Integration
+A React frontend provides a simple interface for entering sensor data and viewing real-time predictions.
+It communicates with the FastAPI backend, sending POST requests to /predict and displaying the API's response. 
+The frontend setup is managed with Vite, styled using TailwindCSS. 
 
+Installation and Setup
+Usage
+Once the API server is running, send sensor data to /predict to receive anomaly predictions. 
+Example usage:
+curl -X POST http://localhost:8000/predict -H "Content-Type: application/json" -d "{\"temperature\": 30, \"humidity\": 70, \"sound_volume\": 65}"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Challenges and Considerations
+Data Generation: Simulating realistic sensor data with sufficient variability.
+Model Performance: Managing imbalanced data and preventing overfitting to simulated patterns.
+API Integration: Ensuring low latency in real-time predictions.
+Scalability: Managing API concurrency with Uvicorn and FastAPI.
+Security: Future improvements include adding authentication and input validation.
 
 
