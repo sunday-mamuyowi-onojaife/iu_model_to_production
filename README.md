@@ -44,7 +44,7 @@ documentation of the respective Python libraries. This will be the most work-int
 your project.
 
 CONCEPTUAL ARCHITECTURE 
-
+![Architecture](https://github.com/user-attachments/assets/dc8a5fc6-cbcf-4962-b672-b6124b17fdfd)
 
 
 
