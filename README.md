@@ -47,16 +47,19 @@ documentation of the respective Python libraries. This will be the most work-int
 your project.
 
 Project Overview
+
 This project simulates an IoT environment where real-time sensor data (temperature, humidity, and sound volume)
 is monitored for anomalies. An anomaly detection model predicts faulty components, enabling proactive maintenance and minimizing production downtime.
 
 Objectives
+
 Simulate and ingest real-time sensor data.
 Build a logistic regression model for anomaly detection.
 Deploy the model via a RESTful API using FastAPI.
 Display real-time predictions using a frontend interface.
 
 System Architecture 
+
 ![Architecture](https://github.com/user-attachments/assets/876be19f-f7d5-4a4b-8eb4-1802b7344bb7)
 The architecture includes:
 
@@ -75,6 +78,7 @@ Anomaly Detection Model: A logistic regression model to classify normal and abno
 Decision Support System: A frontend interface for user input and real-time anomaly feedback.
 
 Data Generation
+
 The data is synthetically generated to mimic sensor readings in a factory setting. 
 The dataset includes 5000 normal and 1600 abnormal instances:
 Normal Data: Generated around typical sensor values.
