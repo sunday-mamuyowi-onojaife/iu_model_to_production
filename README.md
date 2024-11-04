@@ -59,6 +59,7 @@ Display real-time predictions using a frontend interface.
 System Architecture 
 ![Architecture](https://github.com/user-attachments/assets/876be19f-f7d5-4a4b-8eb4-1802b7344bb7)
 The architecture includes:
+
 Generated Dataset: Simulated sensor data generation in CSV format.
  
 Data Stream Simulation: Continuous data streaming to mimic real-time sensor readings.
