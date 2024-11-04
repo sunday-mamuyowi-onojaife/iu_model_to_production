@@ -59,7 +59,7 @@ Build a logistic regression model for anomaly detection.
 Deploy the model via a RESTful API using FastAPI.
 Display real-time predictions using a frontend interface.
 
-System Architecture 
+System Conceptual Architecture 
 
 ![Architecture](https://github.com/user-attachments/assets/876be19f-f7d5-4a4b-8eb4-1802b7344bb7)
 The architecture includes:
