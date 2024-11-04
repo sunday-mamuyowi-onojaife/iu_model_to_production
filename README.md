@@ -140,9 +140,13 @@ Example usage:
 curl -X POST http://localhost:8000/predict -H "Content-Type: application/json" -d "{\"temperature\": 30, \"humidity\": 70, \"sound_volume\": 65}"
 
 Challenges and Considerations
+
 Data Generation: Simulating realistic sensor data with sufficient variability.
+
 Model Performance: Managing imbalanced data and preventing overfitting to simulated patterns.
+
 API Integration: Ensuring low latency in real-time predictions.
+
 Scalability: Managing API concurrency with Uvicorn and FastAPI.
 
 
